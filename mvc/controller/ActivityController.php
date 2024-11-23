@@ -13,15 +13,11 @@ class ActivityController{
         $this->db = $database->getConnection();
         $this->activity = new Activity($this->db);
     }
-
-
-
-
-
-
+    
    public  function listActivities(){
     $obj=$this->activity->read();
     $data= $obj->fetchAll(PDO::FETCH_ASSOC);
     print_r($data) ;
+    echo("<br>");
    }
 }

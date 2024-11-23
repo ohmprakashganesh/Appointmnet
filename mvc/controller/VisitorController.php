@@ -6,6 +6,12 @@ class VisitorController{
 
 private $db;
 private $visitor;
+
+public $name;
+public $mobileNo;
+public $email;
+public $status;
+
   
 
 
@@ -15,15 +21,27 @@ private $visitor;
         $this->db = $database->getConnection();
         $this->visitor= new Visitor($this->db);
     }
-
-
-
     public  function listVisitors(){
-
         $stmt = $this->visitor->read();
         $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-     
       print_r($data) ;
 
     }
+     public function createVisitor($name,$mobile,$email,$status){
+     $this->name=$name;
+     $this->mobileNo=$mobile;
+     $this->email=$email;
+     $this->status=$status;
+     $this->visitor->create();
+     }
+
+     public function updateVisitor($id,$name){
+      $this->name= $name;
+      $data=$this->visitor->update($id);
+     }
+
+     public function viewAppointments($id){
+        $this->visitor->appointments($id);
+     }
+
 }

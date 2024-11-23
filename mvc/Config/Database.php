@@ -17,9 +17,9 @@ class Database {
             // Create a new PDO connection , Pdo is used for establishing the connection with database 
             $this->conn = new PDO("mysql:host=$this->host;dbname=$this->database", $this->userName, $this->password);
 
-            echo "Database connection successful!"; // Success message
+            // echo "Database connection successful!"; //  to show the connection is established successfully 
         } catch (PDOException $e) {
-            // Show error message if connection fails
+            // to the  message if the connection is not establish
             echo "Connection failed: " . $e->getMessage();
         }
 

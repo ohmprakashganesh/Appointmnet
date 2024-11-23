@@ -15,6 +15,18 @@ class Officer{
         $stmt->execute();
         return $stmt;
     }
+    public function create(){
+
+    }
+    public function  update($id, $data){
+
+    }
+    public function  status(){
+
+    }
+    public function  appointments(){
+        
+    }
 
 
 

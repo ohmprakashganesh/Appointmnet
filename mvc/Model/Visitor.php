@@ -47,6 +47,9 @@ public function Activate() {
     $stmt->bindParam(":status", $this->status);
     return $stmt->execute();
 }
+ public function appointments($id){
+ }
+ 
 }
 
 

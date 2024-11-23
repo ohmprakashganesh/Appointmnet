@@ -3,8 +3,7 @@ require_once "../config/database.php";
 
 require_once "../model/Post.php";
 
-// $db= new Database();
-// $db->getConnection();
+
 
 
 class PostController {
@@ -17,12 +16,14 @@ class PostController {
         $this->post = new Post($this->db);
     }
 
+    
+
     public function listPosts() {
         $stmt = $this->post->read();
         $posts = $stmt->fetchAll(PDO::FETCH_ASSOC);
      
       print_r($posts) ;
-        // include "../view/posts/postDatas.php";
+        include "../view/posts/postDatas.php";
     }
 
     public function createPost($name) {

@@ -24,4 +24,17 @@ class AppointmentController{
       print_r($data) ;
 
     }
+    public function createAppointment(){
+      $this->appointment->create();
+    }
+    
+    public function updateAppointment($id){
+      $this->appointment->update($id);
+    }
+
+    public function cancelAppointment($id){
+      $this->appointment->cancel($id);
+
+    }
+
 }

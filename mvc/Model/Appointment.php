@@ -18,6 +18,8 @@ class Appointment {
         $this->conn = $db;
     }
 
+
+
     public function create() {
         $query = "INSERT INTO " . $this->table_name . " (officer_id, visitor_id, name, status, date, start_time, end_time, added_on)
                   VALUES (:officer_id, :visitor_id, :name, :status, :date, :start_time, :end_time, NOW())";
@@ -39,6 +41,13 @@ class Appointment {
         $stmt = $this->conn->prepare($query);
         $stmt->execute();
         return $stmt;
+    }
+    public function update($id){
+
+
+    }
+    public function cancel($id){
+
     }
 
 }
