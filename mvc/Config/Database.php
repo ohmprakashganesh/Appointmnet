@@ -14,12 +14,9 @@ class Database {
         $this->conn = null;
 
         try {
-            // Create a new PDO connection
+            // Create a new PDO connection , Pdo is used for establishing the connection with database 
             $this->conn = new PDO("mysql:host=$this->host;dbname=$this->database", $this->userName, $this->password);
-            
-            // Set error mode to throw exceptions for debugging
-            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            
+
             echo "Database connection successful!"; // Success message
         } catch (PDOException $e) {
             // Show error message if connection fails

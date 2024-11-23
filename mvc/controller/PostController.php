@@ -3,8 +3,8 @@ require_once "../config/database.php";
 
 require_once "../model/Post.php";
 
-$db= new Database();
-$db->getConnection();
+// $db= new Database();
+// $db->getConnection();
 
 
 class PostController {
@@ -27,17 +27,16 @@ class PostController {
 
     public function createPost($name) {
         $this->post->name = $name;
+        $this->post->status="Active";
         $this->post->create();
     }
 
-    public function updatePost($id, $name) {
-        $this->post->id = $id;
+    public function updatePost($name) {
         $this->post->name = $name;
         $this->post->update();
     }
 
-    public function changeStatus($id, $status) {
-        $this->post->id = $id;
+    public function changeStatus($status) {
         $this->post->changeStatus($status);
     }
 }
