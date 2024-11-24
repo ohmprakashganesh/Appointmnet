@@ -5,6 +5,12 @@ class Officer{
     private $table_name="officers";
     private $conn;
 
+    public $Name;
+    public $PostId;
+    public $Status;
+    public $WorkStartTime;
+    public $WorkEndTime;
+
     public function __construct($db){
         $this->conn=$db;
     }
