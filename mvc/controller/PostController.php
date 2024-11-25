@@ -18,7 +18,7 @@ class PostController {
         $stmt = $this->post->read();
         $posts = $stmt->fetchAll(PDO::FETCH_ASSOC);
          
-             include "../View/posts/postDatas.php";
+             include "../View/Post/Main.php";
     
     }
 

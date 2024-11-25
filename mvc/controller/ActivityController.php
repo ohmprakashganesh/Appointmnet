@@ -17,7 +17,8 @@ class ActivityController{
    public  function listActivities(){
     $obj=$this->activity->read();
     $data= $obj->fetchAll(PDO::FETCH_ASSOC);
-    print_r($data) ;
-    echo("<br>");
+    include "../View/Activity/Main.php";
+
+  
    }
 }

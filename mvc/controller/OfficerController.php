@@ -14,8 +14,10 @@ private $db;
 
     public  function ListOfficers(){
         $stmt = $this->officer->read();
-        $officerdata = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        include "../View/posts/officer.php";
+        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        include "../View/Officer/Main.php";
+        
+
     }
 
 }

@@ -8,11 +8,11 @@ require_once "../controller/OfficerController.php";
 
 
 
-$PostController = new PostController();
-$visitorController=new VisitorController();
-$activityController= new ActivityController();
-$appointmentController=new AppointmentController();
-$OfficerController= new OfficerController();
+// $PostController = new PostController();
+// $visitorController=new VisitorController();
+// $activityController= new ActivityController();
+// $appointmentController=new AppointmentController();
+// $OfficerController= new OfficerController();
 
 
 // if (isset($_GET['route']) && $_GET['route'] === 'create-post') {
@@ -51,18 +51,17 @@ $OfficerController= new OfficerController();
 
 
 
-        $PostController->listPosts();
+        // $PostController->listPosts();
 
-
-        $OfficerController->ListOfficers();
+        // $OfficerController->ListOfficers();
     
-        $activityController->listActivities();
+        // $activityController->listActivities();
 
-        $appointmentController->listAppointments();
+        // $appointmentController->listAppointments();
 
-        $visitorController->listVisitors();
+        // $visitorController->listVisitors();
 
-    $PostController->listPosts();
+        //  $PostController->listPosts();
 
 
 

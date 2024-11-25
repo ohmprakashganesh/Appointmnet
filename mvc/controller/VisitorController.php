@@ -12,10 +12,6 @@ public $mobileNo;
 public $email;
 public $status;
 
-  
-
-
-
     public function __construct() {
         $database = new Database();
         $this->db = $database->getConnection();
@@ -24,8 +20,7 @@ public $status;
     public  function listVisitors(){
         $stmt = $this->visitor->read();
         $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-      print_r($data) ;
-
+        include "../View/Visitor/Main.php";
     }
      public function createVisitor($name,$mobile,$email,$status){
      $this->name=$name;

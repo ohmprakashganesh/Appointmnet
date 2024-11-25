@@ -20,8 +20,9 @@ class AppointmentController{
     public  function listAppointments(){
         $stmt = $this->appointment->read();
         $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-     
-      print_r($data) ;
+        
+        include "../View/Appointmnet/main.php";
+      // print_r($data) ;
 
     }
     public function createAppointment(){

@@ -2,10 +2,10 @@
 <?php 
 
 require_once'../controller/PostController.php';
-require_once '../controllers/OfficerController.php';
-require_once '../controllers/ActivityController.php';
-require_once '../controllers/AppointmentController.php';
-require_once '../controllers/VisitorController.php';
+require_once '../controller/OfficerController.php';
+require_once '../controller/ActivityController.php';
+require_once '../controller/AppointmentController.php';
+require_once '../controller/VisitorController.php';
 
 // Create instances of the controllers
 $postController = new PostController();
@@ -61,56 +61,51 @@ $visitorController = new VisitorController();
   <div class="flex-grow-1"   >
 
   <?php
+  if(!isset($_GET['action']))
+  {
+    $postController->listPosts();
+
+  }
     $action = isset($_GET['action']) ? $_GET['action'] : 'post';
     echo "<script>console.log('Action: $action');</script>"; // Debugging output
-
     switch ($action) {
       case 'post':
-        
-
-        $PostController->listPosts();
-
-       echo "post "; // Load the posts page
-       include '../../View/posts/postDatas.php';
+        // echo "Post page "; // Load the posts page
+        $postController->listPosts();
+        // include '../Officer/activity.php'; // Load another page dynamically
         break;
-
       case 'officer':
-        echo "officer "; // Load the posts page
-        $OfficerController->ListOfficers();
-        include '../posts/activity.php'; // Load another page dynamically
+        // echo "officer "; // Load the posts page
+        $officerController->ListOfficers();
         break;
 
         case 'activity':
-          echo "activity "; // Load the posts page
-          $OfficerController->l();
-          include '../posts/officer.php'; // Load another page dynamically
+          // echo "activity "; // Load the posts page
+          $activityController->listActivities();
+          // include '../posts/officer.php'; // Load another page dynamically
           break;
 
           case 'appointments':
-            echo "officer "; // Load the posts page
-            $OfficerController->ListOfficers(); 
-            include '../posts/officer.php'; // Load another page dynamically
+            // echo "appointment "; // Load the posts page
+            $appointmentController->listAppointments(); 
+            // include '../posts/officer.php'; // Load another page dynamically
             break;
 
               case 'visitor':
-                echo "officer "; // Load the posts page
+                // echo "visitor "; // Load the posts page
                 $visitorController->listVisitors(); 
-                include '../posts/officer.php'; // Load another page dynamically
+                // include '../posts/officer.php'; // Load another page dynamically
                 break;
       default:
-        // include './demo.php'; // Default content
-        echo "dfault "; // Load the posts page
-
-        break;
     }
     ?>
 
        
-$activityController->listActivities();
+<!-- $activityController->listActivities();
 
 $appointmentController->listAppointments();
 
-$visitorController->listVisitors();
+$visitorController->listVisitors(); -->
   </div>
 
 
